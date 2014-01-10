@@ -23,6 +23,20 @@ all fields are mandatory except issue description.
 
 set post_issues.php in action of form in create_issue.php
 
+if SSL certificate is set,change
+
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false); 
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
+to 
+
+curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, True); 
+curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, True);
+
+in post_issue.php
+
+
+
 
 
 
