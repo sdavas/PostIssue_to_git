@@ -1,8 +1,6 @@
-PostIssue to Github 
+POST ISSUE TO GITHUB
 
-A PHP simple php script, written with PHP5 to post issues to Github using
-
-Uses GitHub API v3
+A simple script, written with PHP5 to post issues to Github using GitHub API v3
 
 
 
@@ -14,9 +12,19 @@ json enable
 
 Instructions:
 
-use create_issue.php to post username,password,repository where you want to post issues ,issue title and 
+use create_issue.php to post 
+username,
+password,
+repository where you want to post issues ,
+issue title and 
 issue description.
+
 all fields are mandatory except issue description.
+
+set post_issues.php in action of form in create_issue.php
+
+
+
 
 
 
