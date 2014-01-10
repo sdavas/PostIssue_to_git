@@ -1,42 +1,51 @@
 <html>
 <head>
- <title>PHP Test</title>
+
+  <!-- Load jQuery and the validate plugin -->
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+  
+  <!-- jQuery Form Validation code -->
+  <script>
+  
+  // When the browser is ready...
+  $(function() {
+  
+    // Setup form validation on the #create_issue element
+    $("#create_issue").validate({
+    
+        // Specify the validation rules
+        rules: {
+            username: "required",
+            password: "required",
+	    repository: "required",
+            issue: "required"
+        },
+        
+        // Specify the validation error messages
+        messages: {
+            username: "Please provide the username",
+            password: "Please provide the password",
+	    repository: "Please provide the repository name",
+            issue: "Please provide the issue title"
+        },
+        
+        submitHandler: function(form) {
+            form.submit();
+        }
+    });
+
+  });
+  
+  </script>
 </head>
-<script type="text/javascript">
-function validate(){
-
-var username=document.getElementById('username').value;
-var password=document.getElementById('password').value;
-var repository=document.getElementById('repository').value;
-var issue=document.getElementById('issue').value;
-var flag=1;
-if(username==''){
-alert("please fill username");
-flag=0;
-}
-if(password==''){
-alert("please fill password");
-flag=0;
-}
-if (repository==''){
-alert("please fill repository");
-flag=0;
-}
-if(issue==''){
-alert("please fill issue title");
-flag=0;
-}
-alert(flag);
-if (flag==1) {
-return true;
-} else if(flag==0) {
-return false;
-}
-
-}
-</script>
 <body>
-	<form name="create_issue" action="post_issue.php" method="post" onsubmit="return validate();">
+  <h1>Post Issues to Github</h1>
+
+  <!--  The form that will be parsed by jQuery before submit  -->
+ 
+  
+  <form name="create_issue" id="create_issue" action="post_issue.php" method="post">
 		<table>
 			<tr>
 				<td>Git Username:</td>
@@ -64,5 +73,6 @@ return false;
 			</tr>
 		</table>
 	</form>
+  
 </body>
-<html>
+</html>
