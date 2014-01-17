@@ -27,5 +27,5 @@ echo repo = %repo%
 echo title = %title%
 echo desc = %desc%
 
-rem curl --user "%user_name%:%password%" --data '{"title":%title%,"public":"true","body":%desc%,"assignee":%user_name%}' %post_link%
+curl --user "%user_name%:%password%" --data '{"title":%title%,"public":"true","body":%desc%,"assignee":%user_name%}' %post_link%
 pause
