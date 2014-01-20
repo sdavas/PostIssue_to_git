@@ -1,6 +1,8 @@
 @echo OFF
 cls
-rem postissue username password https://api.github.com/  repository "The title of issue" "issue description”
+
+//paste below line from post issue in CLI
+rem postissue username password https://api.github.com  repository "The title of issue" "issue description”
 
 SET user_name=%1
 SET password=%2
